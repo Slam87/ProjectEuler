@@ -1,0 +1,26 @@
+package problem3;
+
+public class primeFactors {
+    private static final long n = 600851475143L;
+
+    public static void main(String[] args) {
+        long largestPrime = 0;
+        for(long i = 2; i < n; i++) {
+            if(n % i == 0 && isPrime(n / i)) {
+                largestPrime = n / i;
+                break;
+            }
+        }
+        System.out.println(largestPrime);
+    }
+
+    private static boolean isPrime(long y) {
+        for(long z = 2; z < y; z++) {
+            if(y % z == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+}
