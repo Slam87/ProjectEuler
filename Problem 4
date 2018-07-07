@@ -1,0 +1,52 @@
+package problem4;
+
+
+public class Palindrome {
+
+    public static void main(String[] args) {
+        int x;
+        int y;
+        int max = 0;
+
+
+        for (y = 100; y <= 999; y++) {
+
+            for (x = 100; x <= 999; x++) {
+
+
+                if (isPalindrome(x * y)) {
+
+                    if( x * y > max){
+                        max = x * y ;
+                }
+            }
+        }
+
+        }
+
+        System.out.println(max);
+
+    }
+
+
+    private static boolean isPalindrome(int p) {
+
+        int reverse = 0;
+        int num = p;
+
+        while (num != 0) {
+
+            reverse *= 10;
+            reverse += num % 10;
+            num /= 10;
+        }
+
+        if (p != reverse) {
+            return false;
+        }
+        return true;
+    }
+
+
+
+}
